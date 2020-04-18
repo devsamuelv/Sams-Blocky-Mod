@@ -14,6 +14,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.item.BlockItem;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.common.ToolType;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.event.entity.player.EntityItemPickupEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -79,7 +80,12 @@ public class ExampleMod implements IExampleMod {
                             ItemList.CONSTRUCTION_BLOCK =
                                     new BlockItem(BlockList.CONSTRUCTION_BLOCK, new BlockItem.Properties()
                                             .group(ItemGroup.MISC))
-                                            .setRegistryName(location("construction_block"))
+                                            .setRegistryName(location("construction_block")),
+
+                            ItemList.RUBY_ORE =
+                                    new BlockItem(BlockList.RUBY_ORE, new BlockItem.Properties()
+                                            .group(ItemGroup.MISC))
+                                            .setRegistryName(location(ItemList.RUBY_ORE_REGISTER_NAME))
                     );
             LOGGER.info("Items Registered");
         }
@@ -98,7 +104,14 @@ public class ExampleMod implements IExampleMod {
                                     new Block(Block.Properties.create(Material.IRON)
                                     .hardnessAndResistance(IBlockList.CONSTRUCTION_BLOCK_HARDNESS, IBlockList.CONSTRUCTION_BLOCK_RESISTANCE)
                                     .sound(IBlockList.CONSTRUCTION_BLOCK_SOUND))
-                                    .setRegistryName(location(IBlockList.CONSTRUCTION_BLOCK_REGISTRY_NAME))
+                                    .setRegistryName(location(IBlockList.CONSTRUCTION_BLOCK_REGISTRY_NAME)),
+
+                            BlockList.RUBY_ORE =
+                                    new Block(Block.Properties.create(Material.IRON)
+                                            .hardnessAndResistance(IBlockList.RUBY_ORE_HARDNESS ,IBlockList.RUBY_ORE_RESISTANCE)
+                                            .sound(IBlockList.RUBY_ORE_SOUND)
+                                            .harvestTool(ToolType.PICKAXE))
+                                            .setRegistryName(location(IBlockList.RUBY_ORE_REGISTRY_NAME))
                     );
         }
 

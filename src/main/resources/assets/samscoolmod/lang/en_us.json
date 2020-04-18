@@ -1,5 +1,7 @@
 {
   "block.samscoolmod.ruby_block": "Ruby Block",
 
-  "block.samscoolmod.construction_block": "Construction Block"
+  "block.samscoolmod.construction_block": "Construction Block",
+
+  "block.samscoolmod.ruby_ore": "Ruby Ore"
 }

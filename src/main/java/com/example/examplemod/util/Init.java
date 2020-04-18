@@ -37,7 +37,7 @@ public class Init implements IExampleMod {
     public void processIMC(final InterModProcessEvent event) {
         // some example code to receive and process InterModComms from other mods
         LOGGER.info("Got IMC {}", event.getIMCStream().
-                map(m -> m.getMessageSupplier().get()).
-                collect(Collectors.toList()));
+                map(m -> m.getMessageSupplier().get())
+                .collect(Collectors.toList()));
     }
 }
